@@ -1,45 +1,39 @@
-#if u have a bug just ask chatgpt bc idk to fix ur bug .-.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#u should dowload library to use this
+#step 1:
+#open cmd or terminal run this code pip install request
+#step 2:
+#wait when dowload done run next code pip install BeautifulSoup
+#step 3:
+#pip install asyncio
+#step 4
+#pip install python-bot-telegram
+#final :
+#dowload pycharm and setup it and then open pycharm run this code
 
 import requests
 from bs4 import BeautifulSoup
 import asyncio
 import telegram
+
 url = ' ur url web u want to send'
+
 bot = telegram.Bot(token='ur bot telegram token')
+
 async def send_message():
     while True:
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
+
         news_div = soup.find('div', {'class': 'list_news'})
         news_links = news_div.find_all('a')
+
         for news_link in news_links:
             news_title = news_link.text.strip()
             news_href = news_link['href']
             await bot.send_message(chat_id='ur profile id in telegram', text=f"ur tittle u want to send imao:\n\n{news_title}\n{news_href}")
+
         await asyncio.sleep(3)
-        
-        
-        
-        
-        
+
+asyncio.run(send_message())
+#and remember open ur cmd or terminal pip a libilary need to this project example:pip install requests,BeautifulSoup,asyncio,and the last is python-bot-telegram
+#good luck and follow me in https://github.com/users/minhdeptrai12346778
