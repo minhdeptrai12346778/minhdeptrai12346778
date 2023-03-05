@@ -1,3 +1,5 @@
+if u have a bug just ask chatgpt bc idk to fix ur bug .-.
+
 import requests
 from bs4 import BeautifulSoup
 import asyncio
@@ -19,4 +21,4 @@ async def send_message():
         
         
         
-        #if u have bug just ask chatgpt lol
+        
